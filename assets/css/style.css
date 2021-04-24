@@ -1,0 +1,407 @@
+@font-face {
+    font-family: Oxygen;
+    src: url(../vendor/font/Oxygen-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Oxygen;
+    overflow-x: hidden;
+}
+
+footer {
+    background-color: rgba(202, 201, 199, 0.9);
+    padding: 40px 0;
+    margin-top: 160px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.text-warning {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/*************************************************** Navigation ***************************************************/
+
+.navigation-links li {
+    display: inline-block;
+}
+
+.navigation-links li a {
+    display: inline-block;
+    color: #333;
+    font-size: 18px;
+}
+
+.navigation-links li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d6cdcd;
+    transition: width .4s;
+}
+
+.navigation-links li a:hover::after {
+    width: 100%;
+    transition: width .4s;
+}
+
+.navigation-links li a:hover {
+    color: #d6cdcd;
+}
+
+.navigation-links li a::first-letter {
+    font-size: 21px;
+}
+
+.navbar-toggler {
+    background-color: #d6cdcd;
+    outline: none!important;
+}
+
+/*************************************************** Carousel ***************************************************/
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 40px!important;
+    width: 40px!important;
+}
+
+/**************************************************** Fa Fa Icos ****************************************************/
+
+.fa-bars {
+    color: #fff;
+    font-size: 29px;
+}
+
+.fa-icons a {
+    color: #333;
+    padding: 0px 10px;
+    font-size: 21px;
+}
+
+.fa-icons a:hover {
+    text-decoration: none;
+}
+
+/**************************************************** Filter Articles Form ****************************************************/
+
+.boxed-form {
+    background-color: lavender;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    padding: 20px;
+}
+
+#filter-div p {
+    background-color: rgb(102, 98, 98);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#filter-div p:not(:first-child) {
+    margin-top: 30px;
+}
+
+#all-articles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/**************************************************** Articles ****************************************************/
+
+.one-article img {
+    border: 1.5px solid #d6cdcd;
+}
+
+.one-article p {
+    margin-bottom: 0.5rem!important;
+}
+
+.overlay {
+    position: absolute;
+    opacity: 0;
+    background-color: rgb(114, 70, 70, .3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: .5s ease;
+}
+
+.one-article:hover .overlay {
+    opacity: 1;
+}
+
+/**************************************************** Pagination ****************************************************/
+
+#pagination {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#pagination-list li {
+    display: inline-block;
+}
+
+#pagination-list .active a {
+    background-color: rgb(136, 136, 136);
+}
+
+.pagination-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    float: left;
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+}
+
+/**************************************************** Contact Form ****************************************************/
+
+.pagination-link:hover {
+    color: #000;
+}
+
+.contact-container {
+    width: 80%;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.contact-container h2 {
+    width: 100%;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-container .row100 {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.contact-container .row100 .col {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+}
+
+.contact-container .row100 .input-box {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    color: #110d53;
+}
+
+.contact-container .row100 .input-box input, .contact-container .row100 .input-box.textarea-box textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+}
+
+.contact-container .row100 .input-box .text-span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 19px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.contact-container .row100 .input-box input:focus+.text-span, .contact-container .row100 .input-box input:valid+.text-span {
+    top: -35px;
+    left: -10px;
+}
+
+.contact-container .row100 .input-box .line {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #cbcfcd;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.contact-container .row100 .input-box input:focus~.line, .contact-container .row100 .input-box input:valid~.line {
+    height: 100%;
+}
+
+.contact-container .row100 .textarea-box {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    padding: 10px 0;
+}
+
+.contact-container .row100 .textarea-box textarea {
+    height: 100%;
+    resize: none;
+}
+
+.contact-container .row100 textarea:focus+.text-span, .contact-container .row100 textarea:valid+.text-span {
+    top: -35px;
+    left: -10px;
+}
+
+.contact-container .row100 textarea:focus~.line, .contact-container .row100 textarea:valid~.line {
+    height: 100%;
+}
+
+#sendMessage {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    border-radius: 2px;
+    background-color: #b8b9b9;
+}
+
+#sendMessage:hover {
+    transition: 0.3s ease;
+    background-color: #5b5c5c;
+    color: #ddd7d7;
+}
+
+.author-info {
+    margin: 40px 0;
+}
+
+.one-article-div {
+    margin: 80px 0;
+}
+
+/**************************************************** Login And Registration Form ****************************************************/
+
+.login-container {
+    margin-top: 100px;
+}
+
+#register-form .control-group {
+    margin-bottom: 30px;
+}
+
+.errors-response {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #e02f2f;
+    color: #fff;
+}
+
+.errors-response p {
+    padding: 6px;
+}
+
+.css-border {
+    border: 1px solid #ccc;
+}
+
+.not-correct-border {
+    border: 2px solid #ff0000;
+}
+
+.fa-icons:before {
+    content: ""!important;
+}
+
+/**************************************************** Admin Dashboard ****************************************************/
+
+#header-dashboard {
+    background: #4b4b4b;
+    color: #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#header-dashboard .create {
+    padding-top: 20px;
+}
+
+#header-dashboard, #main-dashboard {
+    padding: 0 30px;
+}
+
+h1 small {
+    color: #a3a2a2;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+
+.dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: #d1cdcd;
+}
+
+/**************************************************** Error Pages ****************************************************/
+
+.cases-links {
+    margin: 130px 0 210px 0;
+    padding: 100px 0;
+}
+
+.cases-links h1 {
+    font-size: 90px;
+}
+
+.cases-links a {
+    font-size: 28px;
+}
+
+/**************************************************** Cards in Dashboard ****************************************************/
+
+.card-body a {
+    color: #000;
+}
+
+.list-group-item {
+    color: #000!important;
+}
+
+/**************************************************** Stick Footer to Bottom ****************************************************/
+
+.cart-margin, #order-table, #order-details, #statistics-div {
+    padding: 50px 0;
+    margin: 80px 0 230px 0;
+}

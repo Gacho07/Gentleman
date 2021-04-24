@@ -1,0 +1,3 @@
+ErrorDocument 400 http://localhost/Gentleman(copy)/index.php?page=400.php
+ErrorDocument 403 http://localhost/Gentleman(copy)/index.php?page=403.php
+ErrorDocument 404 http://localhost/Gentleman(copy)/index.php?page=404.php
